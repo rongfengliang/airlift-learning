@@ -1,0 +1,10 @@
+<runtime>
+    <!-- Target -->
+    <archive name="${project.artifactId}-${project.version}.tar.gz" hardLinkIncludes="**/*.jar" />
+
+    <!-- Server -->
+    <artifactSet to="lib">
+        <artifact id="${project.groupId}:app:${project.version}" />
+    </artifactSet>
+
+</runtime>
