@@ -2,6 +2,19 @@
     <!-- Target -->
     <archive name="${project.artifactId}-${project.version}.tar.gz" hardLinkIncludes="**/*.jar" />
 
+    <!-- Launcher -->
+    <artifactSet to="/bin">
+        <artifact id="io.airlift:launcher:tar.gz:bin:223">
+            <unpack />
+        </artifact>
+        <artifact id="io.airlift:launcher:tar.gz:properties:223">
+            <unpack filter="true" />
+        </artifact>
+    </artifactSet>
+
+    <fileSet to="/etc">
+        <directory path="${basedir}/src/etc"/>
+    </fileSet>
     <!-- Server -->
     <artifactSet to="lib">
         <artifact id="${project.groupId}:app:${project.version}" />
