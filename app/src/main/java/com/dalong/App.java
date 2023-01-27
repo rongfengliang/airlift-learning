@@ -27,6 +27,7 @@ public class App {
                         });
                         jaxrsBinder(binder).bind(MyDemoResource.class);
                         httpServerBinder(binder).bindResource("/","webapp").withWelcomeFile("index.html");
+                        httpServerBinder(binder).bindResource("/dalongdemoapp","webapp").withWelcomeFile("index.html");
                     }
                 })
                 .add(new HttpServerModule())
