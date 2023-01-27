@@ -12,6 +12,7 @@ import io.airlift.node.NodeConfig;
 import io.airlift.node.NodeModule;
 
 import static io.airlift.configuration.ConfigBinder.configBinder;
+import static io.airlift.http.server.HttpServerBinder.httpServerBinder;
 import static io.airlift.jaxrs.JaxrsBinder.jaxrsBinder;
 
 public class App {
@@ -25,6 +26,7 @@ public class App {
                            nodeConfig.setEnvironment("test");
                         });
                         jaxrsBinder(binder).bind(MyDemoResource.class);
+                        httpServerBinder(binder).bindResource("/","webapp").withWelcomeFile("index.html");
                     }
                 })
                 .add(new HttpServerModule())
